@@ -1,14 +1,19 @@
+<?php
+    require_once('../config.php');
+    require_once('../scripts/email_phishing_checker.php');
+?>
+
 <!DOCTYPE html>
 <html>
 <?php
-    require_once('head.php');
+    require_once('../includes/head.php');
 ?>
 <body>
 <div id="particles-js"></div>
 <div class="container-fluid">
     <div class="container p-5">
         <div class="row">
-            <img id="img-logo" src="img/logo-phish.png" alt="logo-connected" class="mx-auto d-block">
+            <img id="img-logo" src="<?php echo BASE_URL.'assets/img/logo-phish.png' ?>" alt="logo-connected" class="mx-auto d-block">
         </div>
         <div class="row m-5">
             <div class="col-md-10 offset-md-1">
@@ -27,12 +32,12 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <?php foreach ($results as $result): ?>
+                                    <?php foreach ($validatedEmails as $email): ?>
                                         <tr>
-                                            <td class="text-left"><?php echo imap_utf8($result['subject']); ?></td>
-                                            <td class="text-center"><?php echo htmlspecialchars($result['date']); ?></td>
+                                            <td class="text-left"><?php echo imap_utf8($email['subject']); ?></td>
+                                            <td class="text-center"><?php echo htmlspecialchars($email['date']); ?></td>
                                             <td class="text-center">
-                                                <?php echo $result['is_phishing'] ? '<span class="text-danger"><i class="bi-patch-exclamation-fill icon-size"></i></span>' : '<span class="text-success"><i class="bi-patch-check-fill icon-size"></i></span>'; ?>
+                                                <?php echo $email['is_phishing'] ? '<span class="text-danger"><i class="bi-patch-exclamation-fill icon-size"></i></span>' : '<span class="text-success"><i class="bi-patch-check-fill icon-size"></i></span>'; ?>
                                             </td>
                                         </tr>
                                     <?php endforeach; ?>

@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 <?php
-    require_once('head.php');
+    require_once('config.php');
+    require_once('includes/head.php');
 ?>
 <body>
 <div id="particles-js"></div>
@@ -9,14 +10,14 @@
 <div class="container-fluid">
     <div class="container p-5">
         <div class="row">
-            <img id="img-logo" src="img/logo-phish.png" alt="logo-connected" class="mx-auto d-block">
+            <img id="img-logo" src="<?php echo BASE_URL.'assets/img/logo-phish.png' ?>" alt="logo-connected" class="mx-auto d-block">
         </div>
         <div class="row m-5">
             <div class="col-md-6 offset-md-3">
                 <div class="card bg-whitee">
                     <div class="card-body">
                         <h2 class="card-title text-center main-color">Verificação de E-mail</h2>
-                        <form action="verify_emails.php" method="POST">
+                        <form action="pages/emails_list.php" method="POST">
                             <div class="form-group">
                                 <label for="email" class="sec-color mt-2">E-mail:</label>
                                 <input type="text" name="email" class="form-control" required>
@@ -42,7 +43,7 @@
 </div>
 
 <?php
-    require_once('js-content.php');
+    require_once('includes/js_content.php');
 ?>
 </body>
 </html>
