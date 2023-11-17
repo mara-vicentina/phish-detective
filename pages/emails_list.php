@@ -10,6 +10,7 @@
 ?>
 <body>
 <div id="particles-js"></div>
+
 <div class="container-fluid">
     <div class="container p-5">
         <div class="row">
@@ -52,7 +53,7 @@
 </div>
     
     <?php
-        require_once('js-content.php');
+        require_once('../includes/js_content.php');
     ?>
 </body>
 </html>
