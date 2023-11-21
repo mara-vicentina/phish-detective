@@ -1,12 +1,7 @@
-<?php
-    require_once('../config.php');
-    require_once('../scripts/email_phishing_checker.php');
-?>
-
 <!DOCTYPE html>
 <html>
 <?php
-    require_once('../includes/head.php');
+    require_once('src/Views/includes/head.php');
 ?>
 <body>
 <div id="particles-js"></div>
@@ -14,7 +9,7 @@
 <div class="container-fluid">
     <div class="container p-5">
         <div class="row">
-            <img id="img-logo" src="<?php echo BASE_URL.'assets/img/logo-phish.png' ?>" alt="logo-connected" class="mx-auto d-block">
+            <img id="img-logo" src="<?php echo BASE_URL.'/assets/img/logo-phish.png' ?>" alt="logo-connected" class="mx-auto d-block">
         </div>
         <div class="row m-5">
             <div class="col-md-10 offset-md-1">
@@ -53,7 +48,7 @@
 </div>
     
     <?php
-        require_once('../includes/js_content.php');
+        require_once('src/Views/includes/js_content.php');
     ?>
 </body>
 </html>
