@@ -5,7 +5,7 @@ class PhishingValidatorService {
     private $keywords;
 
     public function __construct() {
-        $this->keywords = ["senha", "confirme", "urgente", "clique", "phishing", "ganhou", "ação necessária", "fatura"];
+        $this->keywords = ["senha", "confirme", "urgente", "prêmio", "clique", "phishing", "ganhou", "ação necessária", "fatura", "importante", "atualize", "suspensa", "informações bancárias", "oferta", "risco", "problemas"];
     }
 
     //Verifica se o texto fornecido contém palavras-chave associadas a e-mails de phishing.

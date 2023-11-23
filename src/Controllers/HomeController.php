@@ -18,6 +18,7 @@ class HomeController {
         $emailIds = $imapConnection->getEmailInbox();
         $validatedEmails = [];
 
+        date_default_timezone_set('America/Sao_Paulo');
         if ($emailIds) {
             foreach ($emailIds as $emailId) {
                 $header = $imapConnection->getHeaderInfo($emailId);
